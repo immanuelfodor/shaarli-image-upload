@@ -64,7 +64,7 @@ function hook_image_upload_save_link($data, $conf)
     }
 
     // Add link to the uploaded image in the description
-    $data['description'] = '![' . $_FILES['image']['name'] . '](' . getFullUrl($imgPath) . ")\n" . $data['description'];
+    $data['description'] .= '\n\n' . '![' . $_FILES['image']['name'] . '](' . getFullUrl($imgPath) . ')';
 
     return $data;
 }
